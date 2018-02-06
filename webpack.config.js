@@ -15,7 +15,7 @@ function webpackConfig(target) {
   }
 
   return {
-    entry: './js/main.js',
+    entry: ['babel-polyfill', './js/main.js'],
     output: {
       path: path.resolve(__dirname, 'build'),
       filename: filename,

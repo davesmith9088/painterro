@@ -1,4 +1,4 @@
-// import 'babel-polyfill';
+import 'babel-polyfill';
 
 import isMobile from 'ismobilejs';
 import html2canvas from './html2canvas';
