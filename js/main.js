@@ -1,5 +1,7 @@
+// import 'babel-polyfill';
+
 import isMobile from 'ismobilejs';
-import html2canvas from 'html2canvas';
+import html2canvas from './html2canvas';
 import '../css/styles.css';
 import '../css/bar-styles.css';
 import '../css/icons/ptroiconfont.css';
@@ -671,9 +673,9 @@ class PainterroProc {
             this.documentHandlers.mousewheel(e);
           }
           this.lastFingerDist = fingersDist;
-          e.stopPropagation();
-          e.preventDefault();
         }
+        e.stopPropagation();
+        e.preventDefault();
       },
       mousemove: (e) => {
         if (this.shown) {

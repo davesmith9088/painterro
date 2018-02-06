@@ -19,11 +19,12 @@
       }
 
     </style>
+    <script src="http://code.jquery.com/jquery-3.3.1.slim.js" ></script>
   </head>
 <body>
 
 <div id="wrapper">
-  <div id="conatiner">
+  <div id="container" style="width:1000px;" >
 
   </div>
 </div>
@@ -34,7 +35,7 @@
 <script>
 
 //  Painterro({
-//    id: 'conatiner',
+//    id: 'container',
 //    backgroundFillColor: '#eee',
 //    colorScheme: {
 //      main: '#faf',
@@ -45,14 +46,22 @@
 //  });
 
   Painterro({
-    initText: 'Press <strong>Prn Scr</strong>, Ctrl+V to paste a screenshot',
+    id: 'container',
+    availableLineWidths : [1, 2, 4, 8, 16, 32, 64],
+    availableEraserWidths : [1, 2, 4, 8, 16, 32, 64],
+    toolbarPosition: 'top',
+     // initText: 'dafsd',
     changeHandler: function (state) {
       console.log('Something drawed: ', state);
      // localStorage.setItem('painterroImage', this.imageSaver.asDataURL())
     },
-    // defaultTool: 'line',
+     defaultTool: 'brush',
     //hiddenTools: ['line']
-  }).show() //;
+  }).show();
+  
+   // $('#container').html($('#container').html());
+
+  
 </script>
 </body>
 </html>
