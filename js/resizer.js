@@ -84,7 +84,7 @@ export default class Resizer {
 
   open() {
     // this.wrapper.removeAttribute('hidden');
-    this.wrapper.style.display = null;
+    this.wrapper.style.display = '';
     this.opened = true;
     this.newW = this.main.size.w;
     this.newH = this.main.size.h;

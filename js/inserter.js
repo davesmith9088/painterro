@@ -133,7 +133,7 @@ export default class Inserter {
       img.src = source;
       if (!empty) {
         // this.selector.removeAttribute('hidden');
-        this.selector.style.display = null;
+        this.selector.style.display = '';
         this.waitChoice = true;
       }
     };

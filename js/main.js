@@ -853,10 +853,10 @@ class PainterroProc {
       this.body.style['overflow-y'] = 'hidden';
     }
     // this.baseEl.removeAttribute('hidden');
-    this.baseEl.style.display = null;
+    this.baseEl.style.display = '';
     if (this.holderEl) {
       // this.holderEl.removeAttribute('hidden');
-      this.holderEl.style.display = null;
+      this.holderEl.style.display = '';
     }
     if (typeof openImage === 'string') {
       this.loadedName = trim(

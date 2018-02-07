@@ -435,7 +435,7 @@ ${Math.round(pxData[i][j][3] / s)})`;
   show() {
     this.shown = true;
     // this.area.rect.removeAttribute('hidden');
-    this.area.rect.style.display = null;
+    this.area.rect.style.display = '';
   }
 
   handleMouseUp() {

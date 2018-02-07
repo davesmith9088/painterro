@@ -51,7 +51,7 @@ export default class Settings {
       } else {
         this.errorHolder.innerText = tr('wrongPixelSizeValue');
         // this.errorHolder.removeAttribute('hidden');
-        this.errorHolder.style.display = null;
+        this.errorHolder.style.display = '';
       }
     };
   }
@@ -64,7 +64,7 @@ export default class Settings {
 
   open() {
     // this.wrapper.removeAttribute('hidden');
-    this.wrapper.style.display = null;
+    this.wrapper.style.display = '';
     this.opened = true;
     this.inputPixelSize.value = this.main.select.pixelizePixelSize;
     this.bgSelBtn.style['background-color'] = this.main.colorWidgetState.bg.alphaColor;
