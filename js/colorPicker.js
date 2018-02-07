@@ -114,7 +114,7 @@ export default class ColorPicker {
     this.regetColor();
 
     // this.wrapper.removeAttribute('hidden');
-    this.wrapper.style.display = null;
+    this.wrapper.style.display = '';
     this.opened = true;
     this.addCallback = addCallback;
   }
