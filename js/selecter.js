@@ -17,7 +17,7 @@ export default class PainterroSelecter {
   }
 
   static code() {
-    return '<div class="ptro-crp-rect" hidden>' +
+    return '<div class="ptro-crp-rect" style="display:none;">' +
       '<div class="ptro-crp-l select-handler"></div><div class="ptro-crp-r select-handler"></div>' +
       '<div class="ptro-crp-t select-handler"></div><div class="ptro-crp-b select-handler"></div>' +
       '<div class="ptro-crp-tl select-handler"></div><div class="ptro-crp-tr select-handler"></div>' +
@@ -434,7 +434,8 @@ ${Math.round(pxData[i][j][3] / s)})`;
 
   show() {
     this.shown = true;
-    this.area.rect.removeAttribute('hidden');
+    // this.area.rect.removeAttribute('hidden');
+    this.area.rect.style.display = null;
   }
 
   handleMouseUp() {
@@ -460,7 +461,8 @@ ${Math.round(pxData[i][j][3] / s)})`;
   }
 
   hide() {
-    this.area.rect.setAttribute('hidden', 'true');
+    // this.area.rect.setAttribute('hidden', 'true');
+    this.area.rect.style.display = 'none';
     this.shown = false;
     this.areaionCallback(false);
   }

@@ -45,7 +45,7 @@
 //    }
 //  });
 
-  Painterro({
+  var editor = Painterro({
     id: 'container',
     availableLineWidths : [1, 2, 4, 8, 16, 32, 64],
     availableEraserWidths : [1, 2, 4, 8, 16, 32, 64],
@@ -58,6 +58,7 @@
      defaultTool: 'brush',
     //hiddenTools: ['line']
   }).show();
+  // editor.syncToolElement();
   
    // $('#container').html($('#container').html());
 

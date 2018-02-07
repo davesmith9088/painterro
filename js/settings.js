@@ -46,10 +46,12 @@ export default class Settings {
         this.main.select.pixelizePixelSize = pixelVal;
         setParam('pixelizePixelSize', pixelVal);
         this.startClose();
-        this.errorHolder.setAttribute('hidden', '');
+        // this.errorHolder.setAttribute('hidden', '');
+        this.errorHolder.style.display = 'none';
       } else {
         this.errorHolder.innerText = tr('wrongPixelSizeValue');
-        this.errorHolder.removeAttribute('hidden');
+        // this.errorHolder.removeAttribute('hidden');
+        this.errorHolder.style.display = null;
       }
     };
   }
@@ -61,25 +63,28 @@ export default class Settings {
   }
 
   open() {
-    this.wrapper.removeAttribute('hidden');
+    // this.wrapper.removeAttribute('hidden');
+    this.wrapper.style.display = null;
     this.opened = true;
     this.inputPixelSize.value = this.main.select.pixelizePixelSize;
     this.bgSelBtn.style['background-color'] = this.main.colorWidgetState.bg.alphaColor;
   }
 
   close() {
-    this.wrapper.setAttribute('hidden', 'true');
+    this.wrapper.style.display = 'none';
+    // this.wrapper.setAttribute('hidden', 'true');
     this.opened = false;
   }
 
   startClose() {
-    this.errorHolder.setAttribute('hidden', '');
+    this.errorHolder.style.display = 'none';
+    //  this.errorHolder.setAttribute('hidden', '');
     this.main.closeActiveTool();
   }
 
   static html() {
     return '' +
-      '<div class="ptro-settings-widget-wrapper ptro-common-widget-wrapper ptro-v-middle" hidden>' +
+      '<div class="ptro-settings-widget-wrapper ptro-common-widget-wrapper ptro-v-middle" style="display:none;">' +
         '<div class="ptro-settings-widget ptro-color-main ptro-v-middle-in">' +
             '<table style="margin-top: 5px">' +
               '<tr>' +
@@ -100,7 +105,7 @@ export default class Settings {
                 '</td>' +
               '</tr>' +
             '</table>' +
-            '<div class="ptro-error" hidden></div>' +
+            '<div class="ptro-error" style="display:none;"></div>' +
             '<div style="margin-top: 20px">' +
               '<button type="button" class="ptro-named-btn ptro-apply ptro-color-control">' +
                     `${tr('apply')}</button>` +

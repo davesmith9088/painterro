@@ -852,9 +852,11 @@ class PainterroProc {
       this.origOverflowY = this.body.style['overflow-y'];
       this.body.style['overflow-y'] = 'hidden';
     }
-    this.baseEl.removeAttribute('hidden');
+    // this.baseEl.removeAttribute('hidden');
+    this.baseEl.style.display = null;
     if (this.holderEl) {
-      this.holderEl.removeAttribute('hidden');
+      // this.holderEl.removeAttribute('hidden');
+      this.holderEl.style.display = null;
     }
     if (typeof openImage === 'string') {
       this.loadedName = trim(
@@ -872,9 +874,11 @@ class PainterroProc {
       this.body.style['overflow-y'] = this.origOverflowY;
     }
     this.shown = false;
-    this.baseEl.setAttribute('hidden', '');
+    // this.baseEl.setAttribute('hidden', '');
+    this.baseEl.style.display = 'none';
     if (this.holderEl) {
-      this.holderEl.setAttribute('hidden', '');
+      // this.holderEl.setAttribute('hidden', '');
+      this.holderEl.style.display = 'none';
     }
     return this;
   }

@@ -91,7 +91,8 @@ export default class ColorPicker {
       this.close();
     };
     this.pipetteButton.onclick = () => {
-      this.wrapper.setAttribute('hidden', 'true');
+      // this.wrapper.setAttribute('hidden', 'true');
+      this.wrapper.style.display = 'none';
       this.opened = false;
       this.choosing = true;
     };
@@ -112,13 +113,15 @@ export default class ColorPicker {
     this.alphaRegulator.style.left = `${Math.round(this.alpha * this.w)}px`;
     this.regetColor();
 
-    this.wrapper.removeAttribute('hidden');
+    // this.wrapper.removeAttribute('hidden');
+    this.wrapper.style.display = null;
     this.opened = true;
     this.addCallback = addCallback;
   }
 
   close() {
-    this.wrapper.setAttribute('hidden', 'true');
+    // this.wrapper.setAttribute('hidden', 'true');
+    this.wrapper.style.display = 'none';
     this.opened = false;
   }
 
@@ -278,7 +281,7 @@ export default class ColorPicker {
 
   static html() {
     return '' +
-      '<div class="ptro-color-widget-wrapper ptro-common-widget-wrapper ptro-v-middle" hidden>' +
+      '<div class="ptro-color-widget-wrapper ptro-common-widget-wrapper ptro-v-middle" style="display:none;">' +
         '<div class="ptro-pallet ptro-color-main ptro-v-middle-in">' +
           '<canvas></canvas>' +
           '<canvas class="ptro-canvas-light"></canvas>' +

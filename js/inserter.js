@@ -103,7 +103,8 @@ export default class Inserter {
   }
 
   cancelChoosing() {
-    this.selector.setAttribute('hidden', '');
+    // this.selector.setAttribute('hidden', '');
+    this.selector.style.display = 'none';
     this.waitChoice = false;
   }
 
@@ -131,7 +132,8 @@ export default class Inserter {
       };
       img.src = source;
       if (!empty) {
-        this.selector.removeAttribute('hidden');
+        // this.selector.removeAttribute('hidden');
+        this.selector.style.display = null;
         this.waitChoice = true;
       }
     };
@@ -202,7 +204,7 @@ export default class Inserter {
         `<div>${tr(`pasteOptions.${k}`)}</div>` +
       '</button>';
     });
-    return '<div class="ptro-paster-select-wrapper" hidden><div class="ptro-paster-select ptro-v-middle">' +
+    return '<div class="ptro-paster-select-wrapper" style="display:none;" ><div class="ptro-paster-select ptro-v-middle">' +
       '<div class="ptro-in ptro-v-middle-in">' +
       `<div class="ptro-paste-label">${tr('pasteOptions.how_to_paste')}</div>${
         buttons}</div></div></div>`;

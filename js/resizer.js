@@ -83,7 +83,8 @@ export default class Resizer {
   }
 
   open() {
-    this.wrapper.removeAttribute('hidden');
+    // this.wrapper.removeAttribute('hidden');
+    this.wrapper.style.display = null;
     this.opened = true;
     this.newW = this.main.size.w;
     this.newH = this.main.size.h;
@@ -92,7 +93,8 @@ export default class Resizer {
   }
 
   close() {
-    this.wrapper.setAttribute('hidden', 'true');
+    // this.wrapper.setAttribute('hidden', 'true');
+    this.wrapper.style.display = 'none';
     this.opened = false;
   }
 
@@ -108,7 +110,7 @@ export default class Resizer {
 
   static html() {
     return '' +
-      '<div class="ptro-resize-widget-wrapper ptro-common-widget-wrapper ptro-v-middle" hidden>' +
+      '<div class="ptro-resize-widget-wrapper ptro-common-widget-wrapper ptro-v-middle" style="display:none;" >' +
         '<div class="ptro-resize-widget ptro-color-main ptro-v-middle-in">' +
           '<div style="display: inline-block">' +
             '<table>' +
