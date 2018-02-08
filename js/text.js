@@ -14,7 +14,7 @@ export default class TextTool {
     this.setFontSize(main.params.defaultFontSize);
     this.setFontStrokeSize(main.params.fontStrokeSize);
     this.setFont(TextTool.getFonts()[0].value);
-    this.setFontStyle(TextTool.getFontStyles(main.params.useFullNames)[0].value);
+    this.setFontStyle(TextTool.getFontStyles()[0].value);
 
     this.el.querySelector('.ptro-text-tool-apply').onclick = () => {
       this.apply();
@@ -59,28 +59,28 @@ export default class TextTool {
     return res;
   }
 
-  static getFontStyles(useFullNames) {
+  static getFontStyles() {
     return [
       {
         value: 'normal',
-        name: useFullNames ? 'Normal' : 'N',
+        name: 'Normal',
         title: 'Normal',
       },
       {
         value: 'bold',
-        name: useFullNames ? 'Bold' : 'B',
+        name: 'Bold',
         extraStyle: 'font-weight: bold',
         title: 'Bold',
       },
       {
         value: 'italic',
-        name: useFullNames ? 'Italic' : 'I',
+        name: 'Italic',
         extraStyle: 'font-style: italic',
         title: 'Italic',
       },
       {
         value: 'italic bold',
-        name: useFullNames ? 'Bold italic' : 'BI',
+        name: 'Bold italic',
         extraStyle: 'font-weight: bold; font-style: italic',
         title: 'Bold + Italic',
       },
