@@ -676,9 +676,9 @@ class PainterroProc {
             this.documentHandlers.mousewheel(e);
           }
           this.lastFingerDist = fingersDist;
+          e.stopPropagation();
+          e.preventDefault();
         }
-        e.stopPropagation();
-        e.preventDefault();
       },
       mousemove: (e) => {
         if (this.shown) {
