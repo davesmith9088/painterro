@@ -19,14 +19,14 @@
       }
 
     </style>
-    <script src="http://code.jquery.com/jquery-3.3.1.slim.js" ></script>
   </head>
 <body>
 
 <div id="wrapper">
-  <div id="container" style="width:1000px;" >
+  <div id="conatiner">
 
   </div>
+  fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>fads<br>
 </div>
 
 <!--<script src="https://github.com/ivictbor/painterro/releases/download/0.1.7/painterro-0.1.7.min.js"></script>-->
@@ -35,7 +35,7 @@
 <script>
 
 //  Painterro({
-//    id: 'container',
+//    id: 'conatiner',
 //    backgroundFillColor: '#eee',
 //    colorScheme: {
 //      main: '#faf',
@@ -45,24 +45,21 @@
 //    }
 //  });
 
-  var editor = Painterro({
-    id: 'container',
-    availableLineWidths : [1, 2, 4, 8, 16, 32, 64],
-    availableEraserWidths : [1, 2, 4, 8, 16, 32, 64],
-    toolbarPosition: 'top',
-     // initText: 'dafsd',
+  Painterro({
+    id: 'conatiner',
+    initText: 'Press <strong>Prn Scr</strong>, Ctrl+V to paste a screenshot',
     changeHandler: function (state) {
       console.log('Something drawed: ', state);
      // localStorage.setItem('painterroImage', this.imageSaver.asDataURL())
     },
-     defaultTool: 'brush',
+   // availableLineWidths: [1,2,4,8,16,64],
+   // availableEraserWidths: [1,2,4,8,16,64],
+   // availableFontSizes: [1,2,4,8,16,64],
+   // toolbarPosition: 'top',
+    // fixMobilePageReloader: false,
+    // defaultTool: 'line',
     //hiddenTools: ['line']
-  }).show();
-  // editor.syncToolElement();
-  
-   // $('#container').html($('#container').html());
-
-  
+  }).show() //;
 </script>
 </body>
 </html>

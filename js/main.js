@@ -210,7 +210,7 @@ class PainterroProc {
             this.textTool.setFontStyle(style);
           },
           getValue: () => this.textTool.getFontStyle(),
-          getAvailableValues: () => TextTool.getFontStyles(this.params.useFullNames),
+          getAvailableValues: () => TextTool.getFontStyles(),
         },
         // {
         //   type: 'int',
@@ -853,7 +853,9 @@ class PainterroProc {
     this.scrollWidth = getScrollbarWidth();
     if (this.isMobile) {
       this.origOverflowY = this.body.style['overflow-y'];
-      this.body.style['overflow-y'] = 'hidden';
+      if (this.params.fixMobilePageReloader) {
+        this.body.style['overflow-y'] = 'hidden';
+      }
     }
     // this.baseEl.removeAttribute('hidden');
     this.baseEl.style.display = '';
@@ -1013,7 +1015,7 @@ class PainterroProc {
     (b.controls || []).forEach((ctl) => {
       ctl.id = genId();
       if (ctl.title) {
-        ctrls += `<span class="ptro-tool-ctl-name" title="${tr(ctl.titleFull)}">${tr(this.params.useFullNames ? ctl.titleFull : ctl.title)}</span>`;
+        ctrls += `<span class="ptro-tool-ctl-name" title="${tr(ctl.titleFull)}">${tr(ctl.title)}</span>`;
       }
       if (ctl.type === 'btn') {
         ctrls += `<button type="button" ${ctl.hint ? `title="${tr(ctl.hint)}"` : ''} class="ptro-color-control ${ctl.icon ? 'ptro-icon-btn' : 'ptro-named-btn'}" ` +
